@@ -1,0 +1,30 @@
+version: 2
+
+models:
+
+  - name: stg_vendas
+    description: Camada de staging das vendas
+
+    columns:
+
+      - name: id_cliente
+        description: Identificador único do cliente
+
+        tests:
+          - unique
+          - not_null
+
+      - name: nome
+        description: Nome do cliente
+
+        tests:
+          - not_null
+
+      - name: valor
+        description: Valor da venda
+
+        tests:
+          - not_null
+
+  - name: gold_vendas
+    description: Indicadores consolidados de vendas
